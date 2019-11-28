@@ -6,7 +6,7 @@ public class SelectionSort {
 
 	public static void main(String[] args) {
 
-		int[] a = new int[]{4,50,0,900,1000};
+		int[] a = new int[]{4,50,0,900,1000, 980};
 		int minimum;
 		int minimumIndex = 0;
 		for(int i = 0 ; i < a.length ; i++) {
