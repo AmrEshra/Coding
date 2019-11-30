@@ -22,8 +22,7 @@ public class CountingSort {
 		int mainArrayIndex = 0;
 		for(int i = 0 ; i < t.length ; i++) {
 			for(int j = 1 ; j <= t[i] && t[i] > 0; j++) {
-				a[mainArrayIndex] = i;
-				mainArrayIndex++;
+				a[mainArrayIndex++] = i;
 			}
 		}
 		
