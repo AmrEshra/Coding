@@ -3,13 +3,10 @@ package SortingAlgorithms;
 import java.util.Arrays;
 
 
-public class QuickSortAlgorithm {
-	
-	private QuickSortAlgorithm() {
-	}
+public class QuickSort {
 	
 	public static void main(String[] args) {
-		int[] x = { 9, 2, 4, 7, 3, 7, 10 };
+		int[] x = { 9, 2, 4, 7, 3, 7, 10 , -9 , -3};
 		System.out.println(Arrays.toString(x));
  
 		int low = 0;
