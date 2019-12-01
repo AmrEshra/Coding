@@ -2,13 +2,13 @@ package SortingAlgorithms;
 
 import java.util.Arrays;
 
-public class RadixSort {
+public class RadixSortNumbers {
 
     public static void main(String[] args) {
 
-        int[] radixArray = { 4725, 4586, 1330, 8792, 1594, 5729 };
+        int[] radixArray = {102, 59};
 
-        radixSort(radixArray, 10, 4);
+        radixSort(radixArray, 10, 3);
 
         System.out.println(Arrays. toString(radixArray));
     }
@@ -34,16 +34,13 @@ public class RadixSort {
 
         int[] temp = new int[numItems];
         for (int tempIndex = numItems - 1; tempIndex >= 0; tempIndex--) {
-            temp[--countArray[getDigit(position, input[tempIndex], radix)]] =
-                    input[tempIndex];
+            temp[--countArray[getDigit(position, input[tempIndex], radix)]] = input[tempIndex];
         }
 
         for (int tempIndex = 0; tempIndex < numItems; tempIndex++) {
             input[tempIndex] = temp[tempIndex];
         }
-
     }
-
 
     public static int getDigit(int position, int value, int radix) {
         return value / (int) Math.pow(radix, position) % radix;
