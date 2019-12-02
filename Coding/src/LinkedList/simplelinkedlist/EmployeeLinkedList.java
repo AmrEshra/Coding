@@ -1,4 +1,4 @@
-package LinkedList.implemntation;
+package LinkedList.simplelinkedlist;
 
 public class EmployeeLinkedList {
 

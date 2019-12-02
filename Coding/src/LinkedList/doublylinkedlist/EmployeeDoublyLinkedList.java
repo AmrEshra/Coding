@@ -35,6 +35,25 @@ public class EmployeeDoublyLinkedList {
         size++;
     }
 
+    public void addBefore(Employee employee , Employee newEmployee) {
+    	  	
+    	EmployeeNode node = head;
+        while (node != null) {
+        	if (node.getEmployee().equals(employee))
+        		break;
+        	node = node.getNext();
+        }
+    	
+        EmployeeNode newNode = new EmployeeNode(newEmployee);
+        
+        node.getPrevious().setNext(newNode);
+        newNode.setPrevious(node.getPrevious());
+        newNode.setNext(node);
+        node.setPrevious(newNode);
+
+        size++;
+    }
+    
     public EmployeeNode removeFromFront() {
         if (isEmpty()) {
             return null;
@@ -87,7 +106,7 @@ public class EmployeeDoublyLinkedList {
         EmployeeNode current = head;
         System.out.print("HEAD -> ");
         while (current != null) {
-            System.out.print(current);
+            System.out.print(current.getEmployee().getFirstName());
             System.out.print(" <=> ");
             current = current.getNext();
         }
