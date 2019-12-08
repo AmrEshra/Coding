@@ -1,3 +1,5 @@
+package BinarySearchTree;
+
 public class BinarySearch {
 
 	/**
@@ -5,11 +7,11 @@ public class BinarySearch {
 	 */
 	public static void main(String[] args) {
 
-		int[] array = new int[] { 2, 3, 4, 5, 6, 7, 7, 9, 10 };
+		int[] array = new int[] { 2, 20, 33, 89, 150, 1233 };
 		int start = 0;
-		int end = array.length;
+		int end = array.length - 1;
 
-		int target = 5;
+		int target = 12330;
 
 		System.out.println("index : " + binarySearch(array, start, end, target));
 
