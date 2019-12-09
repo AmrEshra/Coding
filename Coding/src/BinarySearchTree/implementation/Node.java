@@ -55,4 +55,34 @@ public class Node {
 
 	public Node() {
 	}
+
+	
+	public int getNumber() {
+		return number;
+	}
+
+	
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	
+	public Node getLeftNode() {
+		return leftNode;
+	}
+
+	
+	public void setLeftNode(Node leftNode) {
+		this.leftNode = leftNode;
+	}
+
+	
+	public Node getRightNode() {
+		return rightNode;
+	}
+
+	
+	public void setRightNode(Node rightNode) {
+		this.rightNode = rightNode;
+	}
 }

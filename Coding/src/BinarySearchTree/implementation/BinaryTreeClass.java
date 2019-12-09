@@ -16,8 +16,11 @@ public class BinaryTreeClass {
 		
 //		binartTree.traversal();
 		
-		System.out.println("max Number is : " + binartTree.max() );
-		System.out.println("min Number is : " +  binartTree.min());
+		binartTree.delete(15);
+		
+		binartTree.traversal();
+//		System.out.println("max Number is : " + binartTree.max() );
+//		System.out.println("min Number is : " +  binartTree.min());
 
 	}
 
