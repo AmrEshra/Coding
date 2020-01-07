@@ -5,7 +5,7 @@ public class FoldersAndFiles {
 
 	public static void main(String args[]) {
 
-		String path = "E:/Movies/The Office/The Office S06";
+		String path = "C:/Users/arizak/Desktop/Omar";
 		adjustFileNames(path);
 	}
 
@@ -18,9 +18,11 @@ public class FoldersAndFiles {
 			
 			String newFileName = rename(listOfFiles[i].getName());
 						
-			File newFile = new File(path + "/" + i + ".srt");
-			System.out.println(path + "/" +newFile.getName());
-			listOfFiles[i].renameTo(newFile);
+			if(listOfFiles[i].renameTo(new File(newFileName))){
+				System.out.println("Rename succesful");
+			}else{
+				System.out.println("Rename failed");
+			}
 		}
 		
 //		subtitle(path);
@@ -28,11 +30,7 @@ public class FoldersAndFiles {
 
 	private static String rename(String string) {
 
-		if (string.length() == 113)
-			return string.replace("Episode ", "Episode 0");
-
-		return string;
-		
+		return string.replace("music_test2_", "");
 	}
 
 	private static void subtitle(String path) {
