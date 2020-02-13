@@ -1,31 +1,57 @@
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class FoldersAndFiles {
 
 	public static void main(String args[]) {
 
-		String path = "C:/Users/arizak/Desktop/Omar";
+		String path = "E:\\Google Drive\\Omar Khairat - Copy";
 		adjustFileNames(path);
 	}
 
 	private static void adjustFileNames(String path) {
-		
+
 		File folder = new File(path);
 		File[] listOfFiles = folder.listFiles();
-		
+
 		for (int i = 0; i < listOfFiles.length; i++) {
-			
-			String newFileName = rename(listOfFiles[i].getName());
-						
-			if(listOfFiles[i].renameTo(new File(newFileName))){
-				System.out.println("Rename succesful");
-			}else{
-				System.out.println("Rename failed");
+
+			try {
+				rename(listOfFiles[i]);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+
 		}
-		
+
 //		subtitle(path);
+	}
+
+	public static void rename(File toBeRenamed) throws IOException {
+		
+		String new_name = toBeRenamed.getName();
+		new_name = new_name.replace("music_test2_", "");
+		new_name = new_name.replace("عمر خيرت", "");
+		new_name = new_name.replace("اغاني مصرية_موسيقى-عمر-خيرت", "");
+		new_name = new_name.replace("-", "");
+		new_name = new_name.replace("_", "");
+		new_name = new_name.replace("MP3", "");
+		new_name = new_name.replace("    ", "");
+		
+		new_name.trim();
+		
+		// need to be in the same path
+		File fileWithNewName = new File(toBeRenamed.getParent(), new_name);
+		if (fileWithNewName.exists()) {
+			throw new IOException("file exists");
+		}
+		// Rename file (or directory)
+		boolean success = toBeRenamed.renameTo(fileWithNewName);
+		if (!success) {
+			// File was not successfully renamed
+		}
 	}
 
 	private static String rename(String string) {
